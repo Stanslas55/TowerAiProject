@@ -1,0 +1,8 @@
+Session 1:
+
+18h25: debut recherche screen continu
+fin à 20h30, j'ai réussi à récupérer les postions des 3 cases importantes. Il ne manque que la position de l'épée et du bouclier
+début 23h15
+0h15: J'ai trouvé les coordonnées de l'épée, bouclier, et j'arrive à calculer les centre de toutes les box. Je sais aussi clicker au centre. J'ai vérifié avec paint ! :)
+
+Total: 2 + 1 = 3h
