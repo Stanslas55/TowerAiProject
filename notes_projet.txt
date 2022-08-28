@@ -6,3 +6,8 @@ début 23h15
 0h15: J'ai trouvé les coordonnées de l'épée, bouclier, et j'arrive à calculer les centre de toutes les box. Je sais aussi clicker au centre. J'ai vérifié avec paint ! :)
 
 Total: 2 + 1 = 3h
+
+Session 2: 
+
+21h55: Début rédaction plan d'action.
+23h25: J'arrive à récupérer les nombres dans les images. Il faut juste faire un traitement pour chaque cas spécial (il y a 4 cases à scruter alors ce sera rapide, j'en ai déjà fait 1 / 4).
