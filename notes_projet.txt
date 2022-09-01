@@ -11,3 +11,10 @@ Session 2:
 
 21h55: Début rédaction plan d'action.
 23h25: J'arrive à récupérer les nombres dans les images. Il faut juste faire un traitement pour chaque cas spécial (il y a 4 cases à scruter alors ce sera rapide, j'en ai déjà fait 1 / 4).
+
+Total: 3 + 1.5 = 4.5h
+
+Session 3:
+
+18h00: Début des tests d'OCR sur l'onglet du bouclier.
+18h40: Fin des tests, problème avec l'image fournie.  Réduction de la taille des box surveillées.
