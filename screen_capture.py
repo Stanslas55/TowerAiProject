@@ -213,22 +213,47 @@ class TowerAI:
         self.__pvThresh__ += self.__pvIncr__
 
 
-    def stopGame(self):
+    def manageApp(self):
+        # In this part, we launch to game thread.
+
+        #threading.Thread(target=TowerAI.runGame).start()
+
+
         # In this part, we have to search if the ending screen is displayed. 
         # If yes, then kill the runGame thread.        
         # Then click on Retry and start a new runGame thread.
         while(True):
             # TODO: Ask for EndingScreen.png
             endingscreen = pyautogui.locateOnScreen('./images/EndingScreen.png', region=self.main_screen)
+           
             print(endingscreen)
             if(endingscreen != None):
                 # TODO: Kill runGame thread.
 
-                # Click on retry.
+                # TODO: Pre-calculate Retry centrer to click on it
                 self.__click__(self.centerRetry)
 
                 # TODO: Start runGame thread.
 
+# import threading
+# import time
+ 
+# def run():
+#     while True:
+#         print('thread running')
+#         global stop_threads
+#         if stop_threads:
+#             break
+ 
+# stop_threads = False
+# t1 = threading.Thread(target = run)
+# t1.start()
+# time.sleep(1)
+# stop_threads = True
+# t1.join()
+# print('thread killed')
+
+# Maybe look for proccess:  https://docs.python.org/3/library/multiprocessing.html
         
 
 def main():
@@ -236,10 +261,10 @@ def main():
     if __name__== "__main__" :
         
         tower = TowerAI()
-        tower.test_pv_price()
+ 
         
-        #threading.Thread(target=TowerAI.runGame).start()
-        #threading.Thread(target=TowerAI.stopGame).start()
+       
+        #threading.Thread(target=TowerAI.manageApp).start()
         
 
 main()
