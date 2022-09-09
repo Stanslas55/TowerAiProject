@@ -21,7 +21,9 @@ class TowerAI:
 
     __pvPrice__ = 0
 
-    __focusValue__ = True
+    # On Phase 2, we focus on the Value in the OCRed string. 
+    # On Phase 3, we focus on the Price in the OCRed string.
+    __focusValue__ = True 
 
     centerRetry = None # TODO: define.
 
@@ -89,9 +91,7 @@ class TowerAI:
 
         return int(round(float(x)))
 
-    def __processString__(self, x):   
-        print("In processShieldString")   
-        self.__focusValue__ = False     
+    def __processString__(self, x):          
         x = x.split("\n")
 
         if(x[0][0] in ['x']):
@@ -123,7 +123,7 @@ class TowerAI:
         for loc in all_loc:
            
             result_ocr = self.__screenToString__(region=loc)        
-            processed_result = self.__processShieldString__(result_ocr)        
+            processed_result = self.__processString__(result_ocr)        
             value = self.__letterToNumber__(processed_result)
             print(value)
 
@@ -134,7 +134,7 @@ class TowerAI:
     def test_attaque_price(self):
         sleep(5)       
         Degats_OCR = self.__screenToString__(region=self.__locTL__)
-        res = self.__processSwordString__(Degats_OCR)
+        res = self.__processString__(Degats_OCR)
         value = self.__letterToNumber__(res)
         print(value)
 
@@ -162,7 +162,7 @@ class TowerAI:
             sleep(0.5)
             self.__click__(self.__centerTR__)
             result_ocr = self.__screenToString__(region=self.__locTR__)        
-            processed_result = self.__processShieldString__(result_ocr)        
+            processed_result = self.__processString__(result_ocr)        
             regen = self.__letterToNumber__(processed_result)
 
         defense = -1
@@ -171,7 +171,7 @@ class TowerAI:
             sleep(0.5)
             self.__click__(self.__centerBR__)
             result_ocr = self.__screenToString__(region=self.__locBR__)        
-            processed_result = self.__processShieldString__(result_ocr)        
+            processed_result = self.__processString__(result_ocr)        
             defense = self.__letterToNumber__(processed_result)
 
         pv = -1
@@ -180,7 +180,7 @@ class TowerAI:
             sleep(0.5)
             self.__click__(self.__centerTL__)
             result_ocr = self.__screenToString__(region=self.__locTL__)        
-            processed_result = self.__processShieldString__(result_ocr)        
+            processed_result = self.__processString__(result_ocr)        
             pv = self.__letterToNumber__(processed_result)
 
         # Need to check pv price here and store the value.
@@ -198,7 +198,7 @@ class TowerAI:
             sleep(0.5)
             self.__click__(self.__centerTL__)
             result_ocr = self.__screenToString__(region=self.__locTL__)        
-            processed_result = self.__processSwordString__(result_ocr)        
+            processed_result = self.__processString__(result_ocr)        
             attaquePrice = self.__letterToNumber__(processed_result)
 
         print("End of Phase 3.")
