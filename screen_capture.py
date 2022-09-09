@@ -97,7 +97,7 @@ class TowerAI:
         if(x[0][0] in ['x']):
             x = x[1:]                  
      
-        print(x)
+        #print(x)
         x = [i.replace(',', '.') for i in x]
         x = [i.replace('$ ', '') for i in x]
         x = [i.replace('/sec', '') for i in x]       
@@ -107,11 +107,15 @@ class TowerAI:
     def __getPvPrice__(self):
         result_ocr = self.__screenToString__(region=self.__locTL__)  
         
-        x = result_ocr.split("\n")[2:3]
+        x = result_ocr.split("\n")
+        
+        if(x[0][0] in ['x']):
+            x = x[1:]  
+
         x = [i.replace(',', '.') for i in x]
         x = [i.replace('$ ', '') for i in x]                
             
-        return self.__letterToNumber__(x[0])  
+        return self.__letterToNumber__(x[1])  
 
 
  ##### TEST METHODS #####       
@@ -129,14 +133,14 @@ class TowerAI:
 
     def test_pv_price(self):
         sleep(5)
-        self.__getPvPrice__()    
+        print("PV price: " , self.__getPvPrice__() )   
 
     def test_attaque_price(self):
         sleep(5)       
         Degats_OCR = self.__screenToString__(region=self.__locTL__)
         res = self.__processString__(Degats_OCR)
         value = self.__letterToNumber__(res)
-        print(value)
+        print("Attaque price", value)
 
 ##### GAME METHODS #####
 
@@ -232,7 +236,7 @@ def main():
     if __name__== "__main__" :
         
         tower = TowerAI()
-        tower.test_ocr()
+        tower.test_pv_price()
         
         #threading.Thread(target=TowerAI.runGame).start()
         #threading.Thread(target=TowerAI.stopGame).start()
