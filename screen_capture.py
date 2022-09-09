@@ -21,6 +21,8 @@ class TowerAI:
 
     __pvPrice__ = 0
 
+    __focusValue__ = True
+
     centerRetry = None # TODO: define.
 
     # This section gets the main monitor's features (x and y start position, width and height).
@@ -65,7 +67,7 @@ class TowerAI:
     def __click__(self, item):
         pyautogui.click(x=item[0], y=item[1], clicks=1, button='left')
 
-    def __screenToString__(region):
+    def __screenToString__(self, region):
 
         screen_to_ocr = pyautogui.screenshot(region=region)
         screen_to_ocr = np.array(screen_to_ocr)
@@ -73,7 +75,7 @@ class TowerAI:
 
         return pytesseract.image_to_string(threshed_screen)    
 
-    def __letterToNumber__(x):  
+    def __letterToNumber__(self, x):  
 
         if x == '' :
             print("Problème")
@@ -87,23 +89,20 @@ class TowerAI:
 
         return int(round(float(x)))
 
-    def __processShieldString__(x):    
-        x = x.split("\n")[1:2]
+    def __processString__(self, x):   
+        print("In processShieldString")   
+        self.__focusValue__ = False     
+        x = x.split("\n")
 
+        if(x[0][0] in ['x']):
+            x = x[1:]                  
+     
+        print(x)
         x = [i.replace(',', '.') for i in x]
         x = [i.replace('$ ', '') for i in x]
         x = [i.replace('/sec', '') for i in x]       
-    
-        return x[0] 
-
-    # There is a need to process the Sword tab differently than the Shield tab. Here we get the attack price.
-    def __processSwordString__(x):
-        x = x.split("\n")[:2]
-
-        x = [i.replace(',', '.') for i in x]
-        x = [i.replace('$ ', '') for i in x]
-       
-        return x[1]
+        # If Shield, returns value (x[0]), else returns price (x[1])
+        return x[0] if self.__focusValue__ else x[1]
 
     def __getPvPrice__(self):
         result_ocr = self.__screenToString__(region=self.__locTL__)  
@@ -122,7 +121,7 @@ class TowerAI:
 
         all_loc = [self.__locTL__, self.__locTR__, self.__locBR__]
         for loc in all_loc:
-
+           
             result_ocr = self.__screenToString__(region=loc)        
             processed_result = self.__processShieldString__(result_ocr)        
             value = self.__letterToNumber__(processed_result)
@@ -133,9 +132,8 @@ class TowerAI:
         self.__getPvPrice__()    
 
     def test_attaque_price(self):
-        sleep(5)
-        screen_to_ocr = pyautogui.screenshot(region=self.__locTL__)
-        Degats_OCR = pytesseract.image_to_string(screen_to_ocr) 
+        sleep(5)       
+        Degats_OCR = self.__screenToString__(region=self.__locTL__)
         res = self.__processSwordString__(Degats_OCR)
         value = self.__letterToNumber__(res)
         print(value)
@@ -155,6 +153,7 @@ class TowerAI:
             # TODO: Need to create a thread that look for the ending screen, then stop this loop (thread) by updating playing with False.
 
     def __phase2__(self):
+        self.__focusValue__ = True
         self.__click__(self.__centerShield__)
 
         regen = -1
@@ -190,6 +189,7 @@ class TowerAI:
         print("End of Phase 2.")
 
     def __phase3__(self):
+        self.__focusValue__ = False
         self.__click__(self.__centerSword__)
 
         attaquePrice = -1
@@ -231,8 +231,10 @@ def main():
    
     if __name__== "__main__" :
         
+        tower = TowerAI()
+        tower.test_ocr()
         
-        threading.Thread(target=TowerAI.runGame).start()
+        #threading.Thread(target=TowerAI.runGame).start()
         #threading.Thread(target=TowerAI.stopGame).start()
         
 
