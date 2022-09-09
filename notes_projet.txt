@@ -18,3 +18,17 @@ Session 3:
 
 18h00: Début des tests d'OCR sur l'onglet du bouclier.
 18h40: Fin des tests, problème avec l'image fournie.  Réduction de la taille des box surveillées.
+
+Total: 5h10
+
+Session 4:
+
+1h: Application de threshold, test de différentes possibilités
+
+Total: 6h10
+
+Session 5: 
+3h50: Récupération des nombres sur toutes les cellules, comparaisons logiques OK. Création des fonctions de phases et trame du jeu.
+Création d'une classe globale pour organiser le tout. Fonctions de test.
+
+Total: 10h
