@@ -1,3 +1,4 @@
+from inspect import classify_class_attrs
 import threading
 from time import sleep
 
@@ -23,9 +24,7 @@ class TowerAI:
 
     # On Phase 2, we focus on the Value in the OCRed string. 
     # On Phase 3, we focus on the Price in the OCRed string.
-    __focusValue__ = True 
-
-    centerRetry = None # TODO: define.
+    __focusValue__ = True     
 
     # This section gets the main monitor's features (x and y start position, width and height).
     def __init__(self):
@@ -38,6 +37,9 @@ class TowerAI:
 
         X_stat_box = self.main_screen[0] + 1385
         Y_stat_box = 1380
+
+        X_retry = self.main_screen[0] + 1542
+        Y_retry = 1567
 
         stride = 10
 
@@ -64,6 +66,9 @@ class TowerAI:
 
         self.__locShield__ = (X_tab_box + tab_box_width + stride / 4, Y_tab_box, tab_box_width, tab_box_height)
         self.__centerShield__ = (X_tab_box + tab_box_width + stride / 4 + tab_box_width / 2, Y_tab_box + tab_box_height / 2)
+
+        self.__locRetry__ = (X_retry, Y_retry, 346, 180)
+        self.__centerRetry__ = (X_retry + 346 / 2, Y_retry + 180 / 2)
 
 ##### PROCESSING METHODS #####
     def __click__(self, item):
@@ -141,6 +146,21 @@ class TowerAI:
         res = self.__processString__(Degats_OCR)
         value = self.__letterToNumber__(res)
         print("Attaque price", value)
+
+    def test_clicks(self):
+
+        self.__click__(self.__centerTL__)
+        sleep(1)
+        self.__click__(self.__centerTR__)
+        sleep(1)
+        self.__click__(self.__centerBR__)
+        sleep(1)
+        self.__click__(self.__centerSword__)
+        sleep(1)
+        self.__click__(self.__centerShield__) 
+        sleep(1)
+
+        self.__click__(self.__centerRetry__)
 
 ##### GAME METHODS #####
 
@@ -261,7 +281,7 @@ def main():
     if __name__== "__main__" :
         
         tower = TowerAI()
- 
+        tower.test_clicks()
         
        
         #threading.Thread(target=TowerAI.manageApp).start()
