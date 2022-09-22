@@ -37,3 +37,7 @@ Session 6:
 
 13h10: Faire la disjonction de cas avec ou sans multiplicateur pour récupérer la bonne donnée.
 14h50: Disjonction avec et sans multiplicateur faite + homogénéisation des fonctions de traîtement des chaînes de caractères.
+
+Pour créer un executable en un seul fichier:
+
+pyinstaller.exe --onefile .\towerAI.py
