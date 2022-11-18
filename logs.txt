@@ -1,0 +1,47 @@
+18/11/2022 18:16:23: 
+
+		Initialisation
+18/11/2022 18:16:23: 
+
+/!\ Debut du jeu ! /!\ 
+
+
+18/11/2022 18:16:24: ---------------------In searchDiamonds---------------------
+18/11/2022 18:16:24: ---------------------In getTournament---------------------
+18/11/2022 18:16:24: 	In __phase2__
+18/11/2022 18:16:25: In processingString: x = ['798,12/sec', '$', 'K', '']
+18/11/2022 18:16:25: Regen: 798
+18/11/2022 18:16:26: In processingString: x = ['2,03K', '$3,67K', '']
+18/11/2022 18:16:26: Defense: 2030
+18/11/2022 18:16:26: In processingString: x = ['2,03K', '$3,67K', '']
+18/11/2022 18:16:26: Defense: 2030
+18/11/2022 18:16:27: In processingString: x = ['2,03K', '$3,67K', '']
+18/11/2022 18:16:27: Defense: 2030
+18/11/2022 18:16:28: 			DIAMOND FOUND !!
+18/11/2022 18:16:28: In processingString: x = ['$5.44K']
+18/11/2022 18:16:28: Defense: -1
+18/11/2022 18:16:29: In processingString: x = ['$5,44K']
+18/11/2022 18:16:29: Defense: -1
+18/11/2022 18:16:30: In processingString: x = ['$5,44K']
+18/11/2022 18:16:30: Defense: -1
+18/11/2022 18:16:30: In processingString: x = ['$5,44K']
+18/11/2022 18:16:30: Defense: -1
+18/11/2022 18:16:31: In processingString: x = ['$5,44K']
+18/11/2022 18:16:31: Defense: -1
+18/11/2022 18:16:32: In processingString: x = ['$5,44K']
+18/11/2022 18:16:32: Defense: -1
+18/11/2022 18:16:33: In processingString: x = ['$5,44K']
+18/11/2022 18:16:33: Defense: -1
+18/11/2022 18:16:33: 			DIAMOND FOUND !!
+18/11/2022 18:16:33: In processingString: x = ['$5,44K']
+18/11/2022 18:16:33: Defense: -1
+18/11/2022 18:16:34: In processingString: x = ['$5,44K']
+18/11/2022 18:16:34: Defense: -1
+18/11/2022 18:16:35: In processingString: x = ['$5,44K']
+18/11/2022 18:16:35: Defense: -1
+18/11/2022 18:16:35: 
+
+/!\ Fin du jeu ! /!\ 
+
+
+18/11/2022 18:16:39: Shutting Down the app
