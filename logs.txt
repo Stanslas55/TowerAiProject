@@ -1,47 +1,50 @@
-18/11/2022 18:16:23: 
+21/01/2023 19:47:47: 
 
 		Initialisation
-18/11/2022 18:16:23: 
+21/01/2023 19:47:47: 
 
 /!\ Debut du jeu ! /!\ 
 
 
-18/11/2022 18:16:24: ---------------------In searchDiamonds---------------------
-18/11/2022 18:16:24: ---------------------In getTournament---------------------
-18/11/2022 18:16:24: 	In __phase2__
-18/11/2022 18:16:25: In processingString: x = ['798,12/sec', '$', 'K', '']
-18/11/2022 18:16:25: Regen: 798
-18/11/2022 18:16:26: In processingString: x = ['2,03K', '$3,67K', '']
-18/11/2022 18:16:26: Defense: 2030
-18/11/2022 18:16:26: In processingString: x = ['2,03K', '$3,67K', '']
-18/11/2022 18:16:26: Defense: 2030
-18/11/2022 18:16:27: In processingString: x = ['2,03K', '$3,67K', '']
-18/11/2022 18:16:27: Defense: 2030
-18/11/2022 18:16:28: 			DIAMOND FOUND !!
-18/11/2022 18:16:28: In processingString: x = ['$5.44K']
-18/11/2022 18:16:28: Defense: -1
-18/11/2022 18:16:29: In processingString: x = ['$5,44K']
-18/11/2022 18:16:29: Defense: -1
-18/11/2022 18:16:30: In processingString: x = ['$5,44K']
-18/11/2022 18:16:30: Defense: -1
-18/11/2022 18:16:30: In processingString: x = ['$5,44K']
-18/11/2022 18:16:30: Defense: -1
-18/11/2022 18:16:31: In processingString: x = ['$5,44K']
-18/11/2022 18:16:31: Defense: -1
-18/11/2022 18:16:32: In processingString: x = ['$5,44K']
-18/11/2022 18:16:32: Defense: -1
-18/11/2022 18:16:33: In processingString: x = ['$5,44K']
-18/11/2022 18:16:33: Defense: -1
-18/11/2022 18:16:33: 			DIAMOND FOUND !!
-18/11/2022 18:16:33: In processingString: x = ['$5,44K']
-18/11/2022 18:16:33: Defense: -1
-18/11/2022 18:16:34: In processingString: x = ['$5,44K']
-18/11/2022 18:16:34: Defense: -1
-18/11/2022 18:16:35: In processingString: x = ['$5,44K']
-18/11/2022 18:16:35: Defense: -1
-18/11/2022 18:16:35: 
+21/01/2023 19:47:47: ---------------------In searchDiamonds---------------------
+21/01/2023 19:47:47: ---------------------In getTournament---------------------
+21/01/2023 19:47:47: 			DIAMOND FOUND !!
+21/01/2023 19:47:47: 	In __phase2__
+21/01/2023 19:47:48: In processingString: x = []
+21/01/2023 19:47:48: No match
+21/01/2023 19:47:49: In processingString: x = []
+21/01/2023 19:47:49: No match
+21/01/2023 19:47:49: In processingString: x = []
+21/01/2023 19:47:49: No match
+21/01/2023 19:47:50: In processingString: x = []
+21/01/2023 19:47:50: No match
+21/01/2023 19:47:51: In processingString: x = []
+21/01/2023 19:47:51: No match
+21/01/2023 19:47:52: In processingString: x = []
+21/01/2023 19:47:52: No match
+21/01/2023 19:47:52: 			DIAMOND FOUND !!
+21/01/2023 19:47:52: In processingString: x = []
+21/01/2023 19:47:52: No match
+21/01/2023 19:47:53: In processingString: x = []
+21/01/2023 19:47:53: No match
+21/01/2023 19:47:54: In processingString: x = []
+21/01/2023 19:47:54: No match
+21/01/2023 19:47:55: In processingString: x = []
+21/01/2023 19:47:55: No match
+21/01/2023 19:47:55: 
 
 /!\ Fin du jeu ! /!\ 
 
 
-18/11/2022 18:16:39: Shutting Down the app
+21/01/2023 19:48:00: 
+
+/!\ Debut du jeu ! /!\ 
+
+
+21/01/2023 19:48:01: ---------------------In searchDiamonds---------------------
+21/01/2023 19:48:01: ---------------------In getTournament---------------------
+21/01/2023 19:48:01: 	In __phase2__
+21/01/2023 19:48:01: Shutting Down the app
+21/01/2023 19:48:01: In processingString: x = []
+21/01/2023 19:48:01: No match
+21/01/2023 19:48:01: In getPvPrice

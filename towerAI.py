@@ -98,7 +98,7 @@ class TowerAI:
         self.__locRetry__ = (X_retry, Y_retry, 173, 90)
         self.__centerRetry__ = (X_retry + 87, Y_retry + 45)
 
-        self.__locDiamond__ = (X_diamond, Y_diamond, 132, 81)
+        self.__locDiamond__ = (X_diamond, Y_diamond, 133, 80)
         self.__centerDiamond__ = (X_diamond + 132 / 2, Y_diamond + 81 / 2)
 
         self.__locTournament__ = (X_tournament, Y_tournament, 165, 86)
@@ -334,7 +334,7 @@ class TowerAI:
 
         while not self.exit.is_set():
             
-            diamond = pyautogui.locateOnScreen('./images/DiamondPopUp.png', region=self.__locDiamond__)
+            diamond = pyautogui.locateOnScreen('./images/DiamondPopUp2.png', region=self.__locDiamond__)
 
             if diamond != None:            
                 wfile("\t\t\tDIAMOND FOUND !!")
@@ -347,38 +347,38 @@ class TowerAI:
                 self.pause.clear()
                 sleep(5)
 
-    def __get_tournament__(self):
+    # def __get_tournament__(self):
 
-        wfile("---------------------In getTournament---------------------")
+    #     wfile("---------------------In getTournament---------------------")
 
-        while not self.exit.is_set():
-            year, month, day, hour, min = map(int, strftime("%Y %m %d %H %M").split())
+    #     while not self.exit.is_set():
+    #         year, month, day, hour, min = map(int, strftime("%Y %m %d %H %M").split())
 
-            if(hour == 2 and min <= 10):
-                wfile("IT'S 2AM !!!")
+    #         if(hour == 2 and min <= 10):
+    #             wfile("IT'S 2AM !!!")
 
-                tournamentScreen = pyautogui.locateOnScreen('./images/Tournament.png', region=self.main_screen)           
+    #             tournamentScreen = pyautogui.locateOnScreen('./images/Tournament.png', region=self.main_screen)           
                         
-                if(tournamentScreen != None):                      
-                    self.pause.set()     
-                    self.__click__(self.__centerTournament__)
-                    sleep(5)
-                    self.__click__(self.__centerStart__)
-                    self.pause.clear()                
+    #             if(tournamentScreen != None):                      
+    #                 self.pause.set()     
+    #                 self.__click__(self.__centerTournament__)
+    #                 sleep(5)
+    #                 self.__click__(self.__centerStart__)
+    #                 self.pause.clear()                
 
     def appManager(self):
       
         while not self.exit.is_set():
             runGame = Process(target=self.__runGame__)
             searchDiamond = Process(target=self.__searchDiamonds__)
-            tournament = Process(target=self.__get_tournament__)
+            #tournament = Process(target=self.__get_tournament__)
             try:
                 # In this part, we launch to game thread.
                 wfile("\n\n/!\ Debut du jeu ! /!\ \n\n")
                 
                 runGame.start()
                 searchDiamond.start()
-                tournament.start()
+                #tournament.start()
                 # In this part, we have to search if the ending screen is displayed. 
                 # If yes, then kill the runGame thread.        
                 # Then click on Retry and start a new runGame thread.
@@ -406,11 +406,7 @@ class TowerAI:
                 print("Shutting Down the app")
                 wfile("Shutting Down the app")
                 self.exit.set()
-                exit()         
-
- 
-               
-
+                exit()                     
 
 def main():
       
