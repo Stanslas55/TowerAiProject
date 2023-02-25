@@ -130,7 +130,6 @@ class TowerAI:
             return -1
 
         try:
-
             if 'K' in x:
                 return int(round(float(x.replace('K', '')) * 1000))
 
@@ -246,7 +245,7 @@ class TowerAI:
     def __phase2__(self):
         wfile("\tIn __phase2__")
         self.__focusValue__ = True      
-        self.__nphase__ = 2 
+        self.__nphase__ = 2
 
         regen = -1
 
@@ -258,7 +257,7 @@ class TowerAI:
             
                 processed_result = self.__processString__(result_ocr) 
                 if processed_result == []:
-                    wfile("No match")   
+                    wfile("No match in regen")   
                     continue    
                 regen = self.__letterToNumber__(processed_result)
                 wfile("Regen: {}".format(regen))
@@ -273,7 +272,7 @@ class TowerAI:
                     
                 processed_result = self.__processString__(result_ocr)    
                 if processed_result == []:
-                    wfile("No match")   
+                    wfile("No match in defense")   
                     continue     
                 defense = self.__letterToNumber__(processed_result)
                 wfile("Defense: {}".format(defense))
@@ -288,7 +287,7 @@ class TowerAI:
                 
                 processed_result = self.__processString__(result_ocr)   
                 if processed_result == []:
-                    wfile("No match")   
+                    wfile("No match in pv")   
                     continue      
                 pv = self.__letterToNumber__(processed_result)
                 wfile("pv: {}".format(pv))
@@ -317,7 +316,7 @@ class TowerAI:
                 
                 processed_result = self.__processString__(result_ocr)    
                 if processed_result == []:
-                        wfile("No match")   
+                        wfile("No match in attaque")   
                         continue     
                 attaquePrice = self.__letterToNumber__(processed_result)
 
@@ -367,21 +366,25 @@ class TowerAI:
     #                 self.pause.clear()                
 
     def appManager(self):
+        nb_game = 0
       
         while not self.exit.is_set():
             runGame = Process(target=self.__runGame__)
             searchDiamond = Process(target=self.__searchDiamonds__)
-            #tournament = Process(target=self.__get_tournament__)
+           
             try:
                 # In this part, we launch to game thread.
                 wfile("\n\n/!\ Debut du jeu ! /!\ \n\n")
                 
                 runGame.start()
                 searchDiamond.start()
-                #tournament.start()
+
+                nb_game += 1
+                
                 # In this part, we have to search if the ending screen is displayed. 
                 # If yes, then kill the runGame thread.        
                 # Then click on Retry and start a new runGame thread.
+
                 if not self.pause.is_set():
                     while not self.exit.is_set():                              
                         endingscreen = pyautogui.locateOnScreen('./images/Retry.png', region=self.main_screen)           
@@ -390,8 +393,8 @@ class TowerAI:
                             searchDiamond.kill()            
                             runGame.kill()
 
-                            wfile("\n\n/!\ Fin du jeu ! /!\ \n\n")
-                            sleep(5)
+                            wfile(f"\n\n/!\ Fin de la game {nb_game} ! /!\ \n\n")
+
                             self.__click__(self.__centerRetry__)
                             break
             except ValueError:
