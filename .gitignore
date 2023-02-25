@@ -2,3 +2,4 @@
 /build/
 towerAI.spec
 logs.txt
+/__pycache__/
