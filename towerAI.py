@@ -417,10 +417,10 @@ def main():
          
         freeze_support()  
 
-        print("Press Space to start the  AI.") 
+        # print("Press Space to start the  AI.") 
  
-        while not keyboard.is_pressed("space"):
-            pass  
+        # while not keyboard.is_pressed("space"):
+        #     pass  
 
         tower = TowerAI() 
         
