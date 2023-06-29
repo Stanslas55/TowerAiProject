@@ -60,8 +60,20 @@ class TowerAI:
         X_retry = self.main_screen[0] + 771
         Y_retry = 783
 
-        X_diamond = self.main_screen[0] + 686
-        Y_diamond = 395
+        # A
+        X_diamond_local = 689
+        # B
+        Y_diamond_local = 364
+        # C
+        Diamond_width = 129
+        # D
+        Diamond_height = 75
+
+        Retry_width = 173
+        Retry_height = 90
+
+        X_diamond = self.main_screen[0] + X_diamond_local
+        Y_diamond = Y_diamond_local
 
         X_tournament = self.main_screen[0] + 877
         Y_tournament = 609
@@ -95,11 +107,11 @@ class TowerAI:
         self.__locShield__ = (X_tab_box + tab_box_width + stride / 4, Y_tab_box, tab_box_width, tab_box_height)
         self.__centerShield__ = (X_tab_box + tab_box_width + stride / 4 + tab_box_width / 2, Y_tab_box + tab_box_height / 2)
 
-        self.__locRetry__ = (X_retry, Y_retry, 173, 90)
-        self.__centerRetry__ = (X_retry + 87, Y_retry + 45)
+        self.__locRetry__ = (X_retry, Y_retry, Retry_width, Retry_height)
+        self.__centerRetry__ = (X_retry + Retry_width / 4, Y_retry + Retry_height / 4)
 
-        self.__locDiamond__ = (X_diamond, Y_diamond, 133, 80)
-        self.__centerDiamond__ = (X_diamond + 132 / 2, Y_diamond + 81 / 2)
+        self.__locDiamond__ = (X_diamond, Y_diamond, Diamond_width, Diamond_height)
+        self.__centerDiamond__ = (X_diamond + Diamond_width / 2, Y_diamond + Diamond_height / 2)
 
         self.__locTournament__ = (X_tournament, Y_tournament, 165, 86)
         self.__centerTournament__ = (X_tournament + 165 / 2, Y_tournament + 86 / 2)
