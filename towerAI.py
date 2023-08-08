@@ -57,11 +57,23 @@ class TowerAI:
         X_stat_box = self.main_screen[0] + 1385 / 2
         Y_stat_box = 1380 / 2
 
-        X_retry = self.main_screen[0] + 771
-        Y_retry = 783
+        X_retry = self.main_screen[0] + 770
+        Y_retry = 782
 
-        X_diamond = self.main_screen[0] + 686
-        Y_diamond = 395
+        # A
+        X_diamond_local = 691
+        # B
+        Y_diamond_local = 365
+        # C
+        Diamond_width = 124
+        # D
+        Diamond_height = 76
+
+        Retry_width = 175
+        Retry_height = 93
+
+        X_diamond = self.main_screen[0] + X_diamond_local
+        Y_diamond = Y_diamond_local
 
         X_tournament = self.main_screen[0] + 877
         Y_tournament = 609
@@ -95,11 +107,11 @@ class TowerAI:
         self.__locShield__ = (X_tab_box + tab_box_width + stride / 4, Y_tab_box, tab_box_width, tab_box_height)
         self.__centerShield__ = (X_tab_box + tab_box_width + stride / 4 + tab_box_width / 2, Y_tab_box + tab_box_height / 2)
 
-        self.__locRetry__ = (X_retry, Y_retry, 173, 90)
-        self.__centerRetry__ = (X_retry + 87, Y_retry + 45)
+        self.__locRetry__ = (X_retry, Y_retry, Retry_width, Retry_height)
+        self.__centerRetry__ = (X_retry + Retry_width / 4, Y_retry + Retry_height / 4)
 
-        self.__locDiamond__ = (X_diamond, Y_diamond, 133, 80)
-        self.__centerDiamond__ = (X_diamond + 132 / 2, Y_diamond + 81 / 2)
+        self.__locDiamond__ = (X_diamond, Y_diamond, Diamond_width, Diamond_height)
+        self.__centerDiamond__ = (X_diamond + Diamond_width / 2, Y_diamond + Diamond_height / 2)
 
         self.__locTournament__ = (X_tournament, Y_tournament, 165, 86)
         self.__centerTournament__ = (X_tournament + 165 / 2, Y_tournament + 86 / 2)
@@ -417,10 +429,10 @@ def main():
          
         freeze_support()  
 
-        print("Press Space to start the  AI.") 
+        # print("Press Space to start the  AI.") 
  
-        while not keyboard.is_pressed("space"):
-            pass  
+        # while not keyboard.is_pressed("space"):
+        #     pass  
 
         tower = TowerAI() 
         

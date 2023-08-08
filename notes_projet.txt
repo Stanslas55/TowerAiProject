@@ -38,6 +38,9 @@ Session 6:
 13h10: Faire la disjonction de cas avec ou sans multiplicateur pour récupérer la bonne donnée.
 14h50: Disjonction avec et sans multiplicateur faite + homogénéisation des fonctions de traîtement des chaînes de caractères.
 
+29/06/2023
+Updated positions and improved code for better maintainability in the future. The AI is heavily impacted by pixel changes over the game uodates.
+
 Pour créer un executable en un seul fichier:
 
 pyinstaller.exe --onefile .\towerAI.py
