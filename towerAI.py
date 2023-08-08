@@ -57,20 +57,20 @@ class TowerAI:
         X_stat_box = self.main_screen[0] + 1385 / 2
         Y_stat_box = 1380 / 2
 
-        X_retry = self.main_screen[0] + 771
-        Y_retry = 783
+        X_retry = self.main_screen[0] + 770
+        Y_retry = 782
 
         # A
-        X_diamond_local = 689
+        X_diamond_local = 691
         # B
-        Y_diamond_local = 364
+        Y_diamond_local = 365
         # C
-        Diamond_width = 129
+        Diamond_width = 124
         # D
-        Diamond_height = 75
+        Diamond_height = 76
 
-        Retry_width = 173
-        Retry_height = 90
+        Retry_width = 175
+        Retry_height = 93
 
         X_diamond = self.main_screen[0] + X_diamond_local
         Y_diamond = Y_diamond_local
